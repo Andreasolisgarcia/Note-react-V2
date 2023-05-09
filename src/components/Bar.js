@@ -1,4 +1,5 @@
 import React from "react";
+import ReactMarkdown from 'react-markdown'
 
 const Bar = ({
   notes,
@@ -35,6 +36,7 @@ const Bar = ({
               setIsActiveNote(note.id);
               setActiveNote(note);
             }}
+            key={note.id} // add key prop here
           >
             <div className="sidebar-note-tittle">
               <strong>{note.title}</strong>
@@ -50,10 +52,11 @@ const Bar = ({
               </button>
             </div>
 
-            <p>
+            <p><ReactMarkdown>
               {note.content.length > 100
                 ? note.content.substr(0, 97) + "..."
                 : note.content}
+                </ReactMarkdown>
             </p>
             <div className="note-meta">
               last modified {dateFormater(note.lastModified)}
