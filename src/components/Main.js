@@ -1,5 +1,5 @@
 import React from "react";
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from "react-markdown";
 
 const Main = ({
   activeNote,
@@ -35,10 +35,6 @@ const Main = ({
 
   return (
     <div className="app-main">
-      <div className="app-name-note-preview">
-        <h1 className="preview-title">{title || activeNote.title}</h1>
-        <div className="markdown-preview"> <ReactMarkdown>{content}</ReactMarkdown></div>
-      </div>
       <div className="app-main-note-edit">
         <form onSubmit={handleSubmit}>
           <input
@@ -55,6 +51,13 @@ const Main = ({
           />
           <button onClick={(e) => handleSubmit(e)}>Validate</button>
         </form>
+      </div>
+      <div className="app-name-note-preview">
+        <h1 className="preview-title">{title || activeNote.title}</h1>
+        <div className="markdown-preview">
+          {" "}
+          <ReactMarkdown>{content}</ReactMarkdown>
+        </div>
       </div>
     </div>
   );
