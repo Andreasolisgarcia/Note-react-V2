@@ -25,9 +25,7 @@ function App() {
       lastModified: Date.now(),
     };
     setNotes([newNote, ...notes]);
-    setTitle("")
-    setContent("")
-    setActiveNote({})
+
   };
 
   const handleDelete = (idToDelete) => {
@@ -46,6 +44,7 @@ function App() {
       }
       return note;
     }));
+window.location.reload()
   }
 
   return (
